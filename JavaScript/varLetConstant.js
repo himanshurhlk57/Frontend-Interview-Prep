@@ -1,3 +1,26 @@
+// Akshay saini
+let and const are also hoisted same as var
+
+console.log(a); // can't access before initialization
+let a = 10;
+
+console.log(b); // undefined
+var b = 10;
+
+In hositing stage b is in the global space declared with var 
+whereas a is in the script both having value undefined
+
+in case of let and const they are also allocated memory i.e hoisting
+but they are stored in the different memory space and you can't 
+access this memory space before you have put memory in them
+
+temporal deadzone is the time since when this let variable was hoisted and 
+till it is initilaized some value;
+
+when the variable are in the temporal deadzone you can't 
+access them it will give you reference error
+You can only access them when some value is initilaize to it.
+
 // Code with simran
 Whatever variable you declare inside a function belongs to that function
 Any variable declared with var keyboard is function scoped
@@ -21,13 +44,6 @@ If the variable with var keyboard is not declared inside a function then it is a
 
 var is function scope
 whereas let and const are blocked scope any variable declared with let and const is actually a blocked scope
-
-
-
-
-
-
-
 
 
 Arrow function

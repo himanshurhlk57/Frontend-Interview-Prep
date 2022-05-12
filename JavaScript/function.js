@@ -1,40 +1,67 @@
-// 1 -> Callbacks
+1 ->
 
-function computeAndPrint(firstNum, secondNum, func){
-	console.log(func(firstNum, secondNum));
+var x = 1;
+a();
+b();
+console.log(x);
+
+function a() {
+  var x = 10;
+  console.log(x);
+}
+function b() {
+  var x = 100;
+  console.log(x);
 }
 
-function add(firstNum, secondNum){
-	return firstNum + secondNum;
+output:-> 
+10
+100
+1
+
+GEC 
+[ Memory   Code  ]
+
+firstly the gec is created and pushed to the stack 
+and in the next line if there's any function call then 
+its seperate execution context is created and pushed to the 
+stack after it finish executing its execution context is popped 
+from the stack and lastly after every line of program in 
+js finish executing the global execution context is 
+also popped out from the stack. 
+
+whenever you create a execution context whether a global or 
+function execution context a this keyboard is created along with it 
+and at global level this points to the global object i.e the window 
+in case of a browser.
+
+Global object i.e window in case of browser 
+
+Anything which is not inside any function is the global space
+
+Global execution context will be created in the creation phase
+undefined value will be assigned to x then the 
+a function will be invoked its own execution context 
+will be created and in the creation phase undefined value 
+will be assigned to function a x. In the execution phase
+10 will be assigned to x. That x value is bind under 
+a function execution context so 10 value will be printed in console 
+after that same will be happen for b.
+Then javascript will reach at console.log(x) at line 6 
+at will assign 1 value to it 
+so the output to the console is 10 then 100 then 1
+
+var a  = 10;
+function b(){
+    var x = 10;
 }
 
-computeAndPrint(42,5,add);
+console.log(window.a)
+console.log(a)
+console.log(this.a)
 
-// Assignin a function named func to another function add
-
-const add1 = function func(firstNum, secondNum){
-	return firstNum + secondNum;
-}
-
-console.log(add1(2,3));
-
-// we can also write the upper function as 
-
-const add2 = (firstNum, secondNum) => {
-	return firstNum + secondNum;
-}
-
-console.log(add2(3,3));
-
-// also if the return statement is doing only one task we can do
-const add3 = (firstNum, secondNum) => firstNum + secondNum;
-console.log(add3(3,7));
-
-
-//passing arrow function as a argument 
-computeAndPrint(42,7, (firstNum, secondNum) => firstNum + secondNum);
-
-
+all three are referring to the same space i.e in the global object 
+in the window.
 
 // functions are also objects in JS
 

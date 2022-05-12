@@ -5,7 +5,7 @@ Inside javascript engine in case of chrome(V8) there are
 two main things
 
 i-> Memory Heap
-Anyhting that has to be stored and has some value will be
+Anything that has to be stored and has some value will be
 actually stored inside your memory heap
 
 ii > Call Stack

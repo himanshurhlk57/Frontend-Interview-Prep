@@ -1,18 +1,18 @@
 // 1 ->
-// var age = 23;
-// console.log(age); 
-// 23
+var age = 23;
+console.log(age); 
+23
 
 // 2 ->
-// console.log(age); 
-// reference error age is not defined
+console.log(age); 
+reference error age is not defined
 
 // 3 ->
-
 console.log(age);
 var age = 23;
 
 //undefined
+
 /* Even before running javascript code javascript 
 engine knows there's a variable name age somewhere
 in the file gobally and going to check the entire file

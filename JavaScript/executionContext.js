@@ -1,5 +1,5 @@
 /*
-Event though you have written any js code you will have
+Even though you have written any js code you will have
 Global Execution Context has been created.
 Any code you will write will get excuted inside the 
 global Execution context and its remain throughout
@@ -11,7 +11,7 @@ document.getElementById is also the property of window Object.
 *** 
 Without writing any piece of code we have access to the
 global excution context all your code gets excuted inside the
-global excution context and the global excution context
+global excution context and the global execution context
 by default gives access to two things 
 i- window : global object
 ii- this: window
@@ -20,6 +20,34 @@ of this is same as the value of window
 this === window
 
 */
+
+1 -> 
+console.log(x);
+console.log(getName);
+
+var x = 7;
+function getName() {
+    
+}
+
+// output
+undefined
+[Function: getName]
+
+2 -> 
+
+console.log(x);
+console.log(getName);
+
+var x = 7;
+var getName = () => {
+    
+}
+// Output ->
+undefined
+undefined
+
+
 
 var name = "rohit";
 
@@ -34,7 +62,7 @@ function displayName(){
 displayName();
 
 /* First in the creation phase we have access to window and
-this and anyother varibale or function we declared globally 
+this and any other varibale or function we declared globally 
 in the first creation phase in the GEC
 we have access to name : undefined and displayName();
 
