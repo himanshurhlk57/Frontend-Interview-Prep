@@ -1,6 +1,8 @@
 // Akshay saini
 let and const are also hoisted same as var
 
+window = global object(in case of browser)
+
 console.log(a); // can't access before initialization
 let a = 10;
 
@@ -14,12 +16,115 @@ in case of let and const they are also allocated memory i.e hoisting
 but they are stored in the different memory space and you can't 
 access this memory space before you have put memory in them
 
+let and const are attached to seperate space i.e reserved space of let 
+and const 
+
 temporal deadzone is the time since when this let variable was hoisted and 
 till it is initilaized some value;
 
 when the variable are in the temporal deadzone you can't 
 access them it will give you reference error
 You can only access them when some value is initilaize to it.
+
+{} known as block also compound statement 
+use to group multiple statements or wraps multiple statment 
+and now using {} we can use group of statement where it expect single statement 
+i.e after if, if(){}
+
+if(true) console.log(true) if expects only a single statement 
+but what if we want to use multiple statement in that case we can make use of {}
+if(true){
+	console.log(true);
+	console.log(true1);
+}
+
+{
+	var a = 10;
+	let b = 20;
+	const c = 30;
+}
+console.log(a) // 10
+console.log(b) // b is not defined
+console.log(c)
+
+variable with let and const are hoisted in different memory space i.e block memory and assigned undefined
+whereas var is hosited in global memory and assigned undefined
+
+let and const are block scope and you can't access let and const outside the block 
+whereas you can access var ooutside block also
+
+
+// shadowing in javaScript
+
+var a = 100;
+{
+var a = 10;
+let b = 20;
+const c = 30;
+console.log(a) // 10 a value is comming from line 61 and not from 59
+console.log(b) // 20
+console.log(c) //30
+}
+console.log(a) // 10 again a was shadowed and its value has also been modified from 100 to 10
+because a is declared with var keyboard it is in the global space 
+so its value has been modified and both the console are referring to the same memory space i.e global space 
+
+let b = 100;
+{
+	let b = 20;
+	console.log(b) // 20;
+}
+console.log(b) // 100;
+now b is in the two different scope one in the block scope 
+where b value is 20 and one in the other scope i.e script where its value is
+100
+
+shadowing work same in case of functional scope too 
+
+const c = 100;
+function x(){
+	const c = 30;
+	console.log(c) // 30
+}
+console.log(c) // 100
+
+var is a functional scope and let and const are block scope
+
+// Illegal shadowing
+let a = 20;
+{
+	var a = 20; // illegal shadowing
+}
+
+let a = 20;
+function x(){
+	var a = 20; // legal shadowing
+}
+
+var a = 20;
+{
+	let a = 20; // valid shadowing
+}
+
+const a = 20;
+{
+	const a = 100;
+	{
+		const a = 200;
+		console.log(a); // 200
+	}
+}
+
+const a = 20;
+{
+	const a = 100;
+	{
+		console.log(a); // 100
+	}
+}
+
+All the scope rule that work in the function work exactly in 
+the arrow function also
 
 // Code with simran
 Whatever variable you declare inside a function belongs to that function
